@@ -118,7 +118,9 @@ namespace WebApp.Areas.Admin.Controllers
 
         //State Work Start
         public async Task<IActionResult> ListStateAsync(string SortBy, int? page, string Name, string Code, string Excel)
-        {   
+        {
+
+            ViewBag.SortNameParam = SortBy == "Name" ? "Name desc" : "Name";
             ViewBag.SortNameParam = SortBy == "Name" ? "Name desc" : "Name";
             ViewBag.SortCodeParam = SortBy == "Code" ? "Code desc" : "Code";
             ViewBag.SortCreatedOnParam = SortBy == "CreatedOn" ? "CreatedOn desc" : "CreatedOn";
