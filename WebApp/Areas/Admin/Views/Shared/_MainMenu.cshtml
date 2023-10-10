@@ -1,0 +1,58 @@
+﻿<aside class="main-sidebar sidebar-dark-primary elevation-4 text-sm">
+    <a href="@Url.Action("Dashboard","Home")" class="brand-link navbar-primary" style="background-color:#fff !important;padding:5px 10px;">
+        <img src="~/SiteFiles/Images/Jaquarlogo.png" style="height:38px" />
+    </a>
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul id="navItems" class="nav nav-pills nav-sidebar flex-column text-sm" data-widget="treeview" role="menu" data-accordion="false" style="background-color:#454b51 !important;">
+                <li class="nav-item has-treeview">
+                    <a asp-area="admin" asp-controller="Home" asp-action="Dashboard" asp-route-id="" class="nav-link">
+                        <i class="nav-icon fa fa-server"></i>
+                            Dashboard
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a asp-area="admin" asp-controller="Booking" asp-action="ListBooking" asp-area="admin" class="nav-link">
+                        <i class="nav-icon fas fa-university"></i>
+                        <p>
+                            Booking
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a asp-area="admin" asp-controller="Master" asp-action="ListCountry" asp-area="admin" class="nav-link">
+                        <i class="nav-icon fas fa-university"></i>
+                        <p>
+                            Country
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a asp-area="admin" asp-controller="Master" asp-action="ListState" asp-area="admin" class="nav-link">
+                        <i class="nav-icon fas fa-university"></i>
+                        <p>
+                            State
+                        </p>
+                    </a>
+                </li>
+                 <li class="nav-item has-treeview">
+                    <a asp-area="admin" asp-controller="User" asp-action="ListUser" asp-area="admin" class="nav-link">
+                        <i class="nav-icon fa fa-user-circle"></i>
+                        <p>
+                            User
+                        </p>
+                    </a>
+                </li>
+                 <li class="nav-item has-treeview">
+                    <a asp-area="admin" asp-controller="Role" asp-action="ListRole" asp-area="admin" class="nav-link">
+                        <i class="nav-icon fas fa-snowflake"></i>
+                        <p>
+                           Role
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+

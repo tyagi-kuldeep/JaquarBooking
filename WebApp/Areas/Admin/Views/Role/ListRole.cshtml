@@ -1,0 +1,313 @@
+﻿@model IPagedList<WebApp.Areas.Admin.Models.Role.ListRoleVm>
+@{
+    ViewData["Title"] = "List Role";
+    var Idval = (ViewContext.RouteData.Values["id"] != null ? ViewContext.RouteData.Values["id"].ToString() : "");
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title text-bold text-lg">
+                    @ViewData["Title"]
+                    <code>
+                        @{
+                            if (Idval == "success")
+                            {
+                                        @:Role registered successfully.
+                            }
+                            else if (Idval == "del")
+                            {
+                                        @:Role deleted successfully.
+                            }
+                            else if (Idval == "ndel")
+                            {
+                                        @:Error in deleting role.
+                            }
+                        }
+                    </code>
+
+                </h1>
+                <div class="card-tools">
+                    <a href="@Url.Action("AddRole","Role", new { area = "admin" })" class="btn btn-sm btn-primary">Add Role</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        @if (Model.Count > 0)
+                        {
+                            <table class="table table-sm table-bordered table-striped table-responsive-lg">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.ActionLink("Role Name", "ListRoleAsync", new { sortby = ViewBag.SortRoleparameter })
+                                            <i class="fas @(@ViewBag.SortRoleparameter == "Role desc" ? "fa-sort-down" : "fa-sort-up")"></i>
+                                        </th>
+                                        <th></th>
+                                        <th>Menu</th>
+                                    </tr>
+                                </thead>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.RoleName</td>
+                                        <td>
+                                            @if (@item.Id > 0)
+                                            {
+                                                <a title="Edit" href="@Url.Action("AddRole", "Role", new { eid = @item.EncryptedId, area = "admin" })"><i class="fas fa-edit"></i></a>
+                                                <a title="Delete" href="javascript:void(0);" data-toggle="modal" data-target="#modal-default-@item.Id"><i class="fas fa-trash"></i></a>
+                                                @using (Html.BeginForm("DeleteRole", "Role", new { @Id = @item.Id }))
+                                                {
+                                                    <div class="modal fade" id="modal-default-@item.Id">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Delete</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p>Do you really want to delete this role?</p>
+                                                                </div>
+                                                                <div class="modal-footer justify-content-center">
+                                                                    <button type="submit" class="btn btn-danger">Yes</button>
+                                                                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">No</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <span class="text-danger">Pre-defined role, you cannot alter it.</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (@item.Id > 0)
+                                            {
+                                                <a title="View & Assign Menu" href="javascript:void(0);" onclick="ListMenu(@item.Id,'@item.RoleName');" class="btn btn-sm btn-dark">
+                                                    <i class="fab fa-elementor"></i> Assign Menu
+                                                </a>
+                                                <a title="View & Assign Rights" href="javascript:void(0);" onclick="GetRights(@item.Id,'@item.RoleName');" class="btn btn-sm btn-dark">
+                                                    <i class="fas fa-user-lock"></i> Assign Rights
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-danger">Reserved for System.</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        }
+                        else
+                        {
+                            @:@{await Html.RenderPartialAsync("_NoRecordFoundPartial");}
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                @if (Model.Count > 0)
+                    @Html.PagedListPager(Model, page => Url.Action("ListRole", new { page = page }),
+                        new X.PagedList.Mvc.Common.PagedListRenderOptionsBase
+                        {
+                            UlElementClasses = new string[] { "pagination pagination-sm float-right" },
+                            LiElementClasses = new string[] { "page-item" },
+                            PageClasses = new string[] { "page-link" },
+                            MaximumPageNumbersToDisplay = 5
+                        })
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-menu">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header p-1 m-1">
+                <h4 class="modal-menu-title"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 table-responsive">
+                        <table class="table table-striped table-bordered table-sm text-sm">
+                            <thead>
+                                <tr>
+                                    <th>Parent Menu</th>
+                                    <th><input type="checkbox" class="superchkbox" onchange="CheckAll(this,'chkglobal');" /> Sub Menu</th>
+                                </tr>
+                            </thead>
+                            <tbody id="trmenudetails">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button id="btnModalmenu" type="button" class="btn btn-sm btn-primary"><i class="fas fa-save"></i> Save</button>
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-rights">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Rights assigned to Role: <span id="rightsusername"></span></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-1 m-1">
+                <div class="col-sm-12">
+                    <table class="table table-sm table-bordered table-striped">
+                        <thead><tr><th style="width:2%;"></th><th style="width:30%;">Menu</th><th>Rights</th></tr></thead>
+                        <tbody id="dvrights"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button id="btnupdaterights" type="button" class="btn btn-sm btn-danger">Update</button>
+                <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        function ListMenu(RoleId, RoleName) {
+        //    $('.superchkbox').prop('checked', false);
+        //    $.ajax({
+        //        type: "GET",
+        //        url: "@Url.Action("ListMenusByRole", "Menu")",
+        //        data: { 'RoleId': RoleId},
+        //        datatype: "json",
+        //        cache: false,
+        //        success: function (data) {
+        //            var result = "", subresult = "", ParentMenu = "", PParentMenu = "", RankId = 0, PRankId=0;
+        //            $(data).each(function (i) {
+        //                ParentMenu = data[i].ParentMenu;
+        //                RankId = data[i].RankId;
+        //                if (ParentMenu == "Content Prep" || ParentMenu == "End Users" || ParentMenu == "Masters" || ParentMenu == "Reports"  || ParentMenu == "Administrator" || ParentMenu == "Settings") {
+        //                    if (ParentMenu != PParentMenu && subresult != "") {
+        //                        //<td><input type='checkbox' class='chkglobal' onchange='CheckAll(this,\"chklocal" + PRankId + "\");' /></td>
+        //                        result += "<tr><td>" + PParentMenu + "</td><td>" + subresult + "</td></tr>";
+        //                        subresult = "";
+        //                    }
+        //                    subresult += " <input id='chk_" + data[i].Id + "' data-sun-menuid=" + data[i].Id + " type='checkbox' " + (data[i].IsAssigned > 0 ?"checked":"")+" class='chkglobal chklocal chklocal" + RankId + "' /> " + data[i].SubMenu + "";
+        //                }
+        //                else {
+        //                    if (subresult != "") {
+        //                        result += "<tr><td>" + PParentMenu + "</td><td>" + subresult +"</td></tr>";
+        //                        subresult = "";
+        //                    }
+        //                    result += "<tr><td>" + ParentMenu + "</td><td><input id='chk_" + data[i].Id + "' data-sun-menuid=" + data[i].Id + "  type='checkbox' " + (data[i].IsAssigned > 0 ? "checked" : "") +" class='chkglobal chklocal chklocal" + RankId +"' /> " + data[i].SubMenu + "</td></tr>";
+        //                }
+        //                PParentMenu = ParentMenu;
+        //                PRankId = RankId;
+        //            });
+        //            if (subresult != "")
+        //                result += "<tr><td>" + PParentMenu + "</td><td>" + subresult + "</td></tr>";
+
+        //            $("#trmenudetails").empty().append(result);
+        //            $('#modal-menu .modal-menu-title').html('Menu for Role - ' + RoleName);
+        //            $('#btnModalmenu').attr('onclick', 'SaveMenu(' + RoleId+');');
+                    $('#modal-menu').modal('show');
+                //}
+            //});
+        }
+        function SaveMenu(RoleId) {
+            var MenuIds = new Array();
+            $('.chklocal').each(function () {
+                if ($(this).is(":checked")) {
+                    var _Id = parseInt($(this).attr('data-sun-menuid')) || 0;
+                    MenuIds.push(_Id);
+                }
+            });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("SaveMenuByRole", "Menu")",
+                data: { 'RoleId': RoleId, MenuIds: MenuIds.join(",")},
+                datatype: "json",
+                cache: false,
+                success: function (data) {
+                    $('#modal-menu').modal('hide');
+                    Notification((data[0].Msg == 1 ? 'success' : 'error'), '', (data[0].Msg == 1 ? 'Menu updated successfully.' : 'Error in Menu updation.'));
+                }
+            });
+        }
+        function CheckAll(Obj,classname) {
+            if (Obj.checked)
+                $('.' + classname).prop('checked', true);
+            else
+                $('.' + classname).prop('checked', false);
+        }
+
+        function GetRights(RoleId, RoleName) {
+            $("#btnupdaterights").attr('onclick', 'UpdateRightsByRoleId(\"' + RoleId+'\")');
+            $("#rightsusername").html(RoleName);
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetRightsByRoleId", "Administrator")',
+            contentType: "application/json",
+            dataType: "json",
+            data: "RoleId=" + RoleId,
+            success: function (response) {
+                var dvrights = $("#dvrights").empty(), allrights = "";
+                if (response.allrights.length > 0) {
+                    $.each(response.allrights, function (i, item) {                        
+                        allrights += ' <input id="' + item.Id + '" data-sun-isavoid="false" data-sun-rightid="' + item.Id + '" type="checkbox" name="chkrights"/> ' + item.Name;
+                    });
+                }
+                if (response.allmenus.length > 0) {
+                    $.each(response.allmenus, function (i, item) {
+                        dvrights.append('<tr><td><input id="pchk_' + item.Id + '" data-sun-isavoid="true" type="checkbox" onclick="$(\'#Menu_' + item.Id + '\').find(\'input[type=checkbox]\').each(function () {this.checked = $(\'#pchk_' + item.Id + '\').prop(\'checked\');});"/></td><td>' + item.Name + '</td><td id="Menu_' + item.Id + '" data-sun-menuid="' + item.Id + '">'+allrights+'</td></tr></div>');
+                    });
+                }
+                if (response.userrights.length > 0) {
+                    var Menuid = 0, Rightid = 0;
+                    $.each(response.userrights, function (i, item) {
+                        Menuid = item.MenuId;
+                        Rightid = item.RightsId;
+                        $("#Menu_" + Menuid + " input[id='" + Rightid + "']:checkbox").prop("checked", true);
+                    });
+                }
+                $('#modal-rights').modal('show');
+            }
+        });
+        }
+        function UpdateRightsByRoleId(roleId) {
+            var rights = new Array(), j = 0, isavoid="false";
+            $('#dvrights input[type=checkbox]').each(function (i) {
+                if (this.checked && $(this).attr('data-sun-isavoid')=='false')
+                    rights[j++] = $(this).closest('td').attr('data-sun-menuid')+"~"+$(this).attr('id');
+                });
+            if (rights.length <= 0)
+                Notification('error', '', 'Select a right to save.');
+            else {
+                $.ajax({
+                    type: "POST",
+                    url:'@Url.Action("UpdateRightsByRoleId", "Administrator")',
+                    data: { selectedrights: rights, RoleId: roleId},
+                    success: function (response) {
+                            if (response == "success") {
+                                $('#modal-rights').modal('toggle');
+                                Notification('success','','Rights updated successfully.');
+                            }
+                            else
+                                Notification('error','',response);
+                        }
+                });
+            }
+        }
+    </script>
+}

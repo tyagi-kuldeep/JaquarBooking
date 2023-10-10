@@ -1,0 +1,53 @@
+﻿@model WebApp.Areas.Admin.Models.Role.AddRoleVm
+<div class="row">
+    <div class="col-md-12">
+        <form id="frmsubmit" class="form-horizontal" asp-area="admin" asp-controller="Role" asp-action="AddRole">             
+            <span>@ViewBag.Msg</span>
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title text-bold text-lg">@ViewData["Title"]</h1>
+                    <div class="card-tools">
+                        <button type="submit" class="btn btn-sm btn-primary" name="submit">Save</button>
+                        <a href="@Url.Action("ListRole","Role", new { area = "admin" })" class="btn btn-sm btn-default">Cancel</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-4 col-form-label">@Html.DisplayNameFor(m => m.Name)</label>
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control form-control-sm", @autofocus = "autofocus" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-danger">
+                                @Html.ValidationSummary()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        $('#frmsubmit').submit(function () {
+            if ($(this).valid()) {
+                $(this).find(':submit').attr('disabled', 'disabled');
+            } else {
+                $(this).find(':submit').removeAttr("disabled");
+            }
+        });
+    </script>
+}

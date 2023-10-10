@@ -1,0 +1,259 @@
+﻿@model WebApp.Areas.Admin.Models.User.AddUserVm
+@section Styles
+{
+    <link href="~/Css/jquery-ui.css" rel="stylesheet" />
+}
+@{
+    ViewData["Title"] = "Add User";
+}
+    <div class="row">
+        <div class="col-md-12">
+            <form id="frmsubmit" class="form-horizontal" asp-controller="User" asp-action="AddUser" enctype="multipart/form-data">
+            <span>@ViewBag.Msg</span>
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title text-bold text-lg">
+                    @ViewData["Title"]                    
+                </h1>
+                <div class="card-tools">
+                         <button type="submit" class="btn btn-sm btn-primary" name="submit" onclick="return Validate('saven');">Save</button>
+                        <input type="submit" class="btnSubmitOrder btn btn-sm btn-primary" name="save" value="Save & Exit" onclick="return Validate('savenexit');" />
+                        <a href="@Url.Action("ListUser","User")" class="btn btn-sm btn-default">Cancel</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                      <div class="col-md-12">    
+            @Html.AntiForgeryToken()
+            <div class="card card-default">
+                <div class="card-header">
+                     <h1 class="card-title text-bold text-lg">
+                        @ViewData["Title"]
+                            @Html.HiddenFor(m => m.Id)
+                            @Html.HiddenFor(m => m.CallerBtnName)
+                    </h1>
+                    <div class="card-tools">
+
+                    </div>
+                </div>
+                <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 text-danger">
+                                @Html.ValidationSummary()
+                            </div>
+                        </div>
+                        <div class="row">                            
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-sm-4 col-form-label" })
+                                    <div class="col-sm-8">
+                                    @if (Model.Id > 0)
+                                    {
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-sm",@readonly="readonly" })
+                                        @Html.HiddenFor(m => m.Email)
+                                    }
+                                    else
+                                    {
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-sm" })
+                                    }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.FirstName, new { @class = "col-sm-4 col-form-label" })
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control form-control-sm" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">&nbsp;
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.MiddleName, new { @class = "col-sm-4 col-form-label" })
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control form-control-sm" })
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.LastName, new { @class = "col-sm-4 col-form-label" })
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control form-control-sm" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.CountryId, new { @class = "col-sm-4 col-form-label" })
+                                <div class="col-sm-8">
+                                        <select id="CountryId" name="CountryId" asp-for="CountryId" asp-items="Model.AvailableCountries" onchange="BindState(0);" class="form-control form-control-sm">
+                                            <option value="0">-- Select --</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                               @Html.LabelFor(m => m.StateId, new { @class = "col-sm-4 col-form-label" })
+                                <div class="col-sm-8">
+                                    @*@Html.DropDownListFor(m => m.StateId, Enumerable.Empty<SelectListItem>(), "-- Select --", new { @class = "form-control form-control-sm" })*@
+                                        <select id="StateId" name="StateId" asp-for="StateId" asp-items="Model.AvailableStates" class="form-control form-control-sm">
+                                            <option value="0">-- Select --</option>
+                                   </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.City, new { @class = "col-sm-4 col-form-label" })
+                                <div class="col-sm-8">
+                                   @Html.TextBoxFor(m => m.City, new { @class = "form-control form-control-sm" })
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-6">
+                              <div class="form-group row">
+                                @Html.LabelFor(m => m.Gender, new { @class = "col-sm-4 col-form-label" })
+                                <div class="col-sm-8">
+                                    <select asp-for="Gender" class="form-control form-control-sm">
+                                     @*   <option value="0">-- Select --</option>*@
+                                        <option value="1" selected="selected">Male</option>
+                                        <option value="2">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(m => m.ZipCode, new { @class = "col-sm-4 col-form-label" })
+                                    <div class="col-sm-8">
+                                        @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control form-control-sm" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(m => m.Dob, new { @class = "col-sm-4 col-form-label" })
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                                        @Html.TextBoxFor(m => @m.Dob, new { @class = "form-control form-control-sm jqDate",@id="datepicker"})
+                                            <div class="input-group-append ">
+                                                <span class="input-group-text cldatepicker"><a class="cldatepicker" href="javacsript:void(0);"><i class="far fa-calendar-alt"></i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-sm-4 col-form-label" })
+                                    <div class="col-sm-8">
+                                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control form-control-sm" })
+                                    </div>
+                                </div>
+                            </div>
+                           <div class="col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(m => m.PhoneSecondary, new { @class = "col-sm-4 col-form-label" })
+                                    <div class="col-sm-8">
+                                        @Html.TextBoxFor(m => m.PhoneSecondary, new { @class = "form-control form-control-sm" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Address</label>
+                                <div class="col-sm-8">
+                                    @Html.TextAreaFor(m => m.Address1, new { @class = "form-control form-control-sm" })
+                                </div>
+                            </div>
+                        </div>                       
+                        <div class="col-md-6" >
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.Address2, new { @class = "col-sm-4 col-form-label" })
+                                <div class="col-sm-8">
+                                    @Html.TextAreaFor(m => m.Address2, new { @class = "form-control form-control-sm" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Profile Picture</label>
+                        </div>
+                        <div class="col-md-4 ml-2">
+                            <div class="input-wrap">                                
+                                <input asp-for="Photo" class="form-control form-control-sm custom-file-input" accept=".jpg,.png,.bmp,.gif,.jpeg" />
+                                <label for="Photo" class="custom-file-label">Choose File...</label>                                
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="">
+                                <img height="50" width="50" class="img-rounded" src="~/SiteFiles/UserImages/@(Model.Image??"noimage.jpg")" alt="User profile picture" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer clearfix">
+                  
+                </div>
+            </div>
+       
+    </div>
+                </div>
+                
+          </div>
+          </div>
+         
+           </form>
+              </div>
+     </div>
+
+    @section Scripts
+{
+    <script src="~/Js/jquery-ui.js"></script>
+<script type="text/javascript">
+        $( function() {
+           // Notification("warning", "warning Title", "warning Message section");
+           //Notification("success", "success Title", "success Message section");
+           //Notification("error", "error Title", "error Message section");
+           //Notification("info", "info Title", "info Message section");
+            $( "#datepicker" ).datepicker();
+             $(".custom-file-input").on("change", function () {
+                var filename = $(this).val().split('\\').pop();
+                $(this).next('.custom-file-label').html(filename);
+            });
+        } );
+function BindState(selId) {
+    var countryid = parseInt($("#CountryId").val()) || 0;
+    if(countryid>0)
+    {
+        $.getJSON('/Ajax/LoadDd', { Type: "GetStateByCountryID", RefId: countryid }, function (data) {
+        var item = "";
+        $.each(data, function (i, res) {
+            //alert();
+            item += '<option value="' + res.value + '">' + res.text + '</option>';
+        });
+        $("#StateId").html(item);
+        if (selId > 0) { $("#StateId").val(selId); };
+    });
+    }
+}
+</script>
+}

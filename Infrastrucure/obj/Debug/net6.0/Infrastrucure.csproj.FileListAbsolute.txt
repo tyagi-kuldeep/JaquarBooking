@@ -1,0 +1,171 @@
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.deps.json
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.runtimeconfig.json
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.dll
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\ref\Infrastrucure.dll
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.pdb
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.dll
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.dll
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.pdb
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.pdb
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.AssemblyReference.cache
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.GeneratedMSBuildEditorConfig.editorconfig
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfoInputs.cache
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfo.cs
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CoreCompileInputs.cache
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CopyComplete
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.dll
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\ref\Infrastrucure.dll
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.pdb
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.genruntimeconfig.cache
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.deps.json
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.runtimeconfig.json
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.dll
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\bin\Debug\net6.0\ref\Infrastrucure.dll
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.pdb
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.dll
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.dll
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.pdb
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.pdb
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.AssemblyReference.cache
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.GeneratedMSBuildEditorConfig.editorconfig
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfoInputs.cache
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfo.cs
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CoreCompileInputs.cache
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CopyComplete
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.dll
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\obj\Debug\net6.0\ref\Infrastrucure.dll
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.pdb
+D:\coreprojects\New folder\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.genruntimeconfig.cache
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.deps.json
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.runtimeconfig.json
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.dll
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.pdb
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.dll
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.dll
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.pdb
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.pdb
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.AssemblyReference.cache
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfoInputs.cache
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfo.cs
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CoreCompileInputs.cache
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CopyComplete
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.dll
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\refint\Infrastrucure.dll
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.pdb
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.genruntimeconfig.cache
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Infrastrucure\obj\Debug\net6.0\ref\Infrastrucure.dll
+D:\coreproject\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.deps.json
+D:\coreproject\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.runtimeconfig.json
+D:\coreproject\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.dll
+D:\coreproject\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.pdb
+D:\coreproject\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.dll
+D:\coreproject\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.dll
+D:\coreproject\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.pdb
+D:\coreproject\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.pdb
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.AssemblyReference.cache
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.GeneratedMSBuildEditorConfig.editorconfig
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfoInputs.cache
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfo.cs
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CoreCompileInputs.cache
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CopyComplete
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.dll
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\refint\Infrastrucure.dll
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.pdb
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.genruntimeconfig.cache
+D:\coreproject\JaquarBooking\Infrastrucure\obj\Debug\net6.0\ref\Infrastrucure.dll
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.deps.json
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.runtimeconfig.json
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.dll
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.pdb
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.dll
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.dll
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.pdb
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.pdb
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.AssemblyReference.cache
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfoInputs.cache
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfo.cs
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CoreCompileInputs.cache
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CopyComplete
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.dll
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\refint\Infrastrucure.dll
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.pdb
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.genruntimeconfig.cache
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Infrastrucure\obj\Debug\net6.0\ref\Infrastrucure.dll
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.deps.json
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.runtimeconfig.json
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.dll
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\bin\Debug\net6.0\ref\Infrastrucure.dll
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.pdb
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.dll
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.dll
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.pdb
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.pdb
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.AssemblyReference.cache
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.GeneratedMSBuildEditorConfig.editorconfig
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfoInputs.cache
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfo.cs
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CoreCompileInputs.cache
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CopyComplete
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.dll
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\obj\Debug\net6.0\ref\Infrastrucure.dll
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.pdb
+D:\coreprojects\2102\2102\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.genruntimeconfig.cache
+D:\coreprojects\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.deps.json
+D:\coreprojects\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.runtimeconfig.json
+D:\coreprojects\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.dll
+D:\coreprojects\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.pdb
+D:\coreprojects\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.dll
+D:\coreprojects\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.dll
+D:\coreprojects\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.pdb
+D:\coreprojects\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.pdb
+D:\coreprojects\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.AssemblyReference.cache
+D:\coreprojects\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.GeneratedMSBuildEditorConfig.editorconfig
+D:\coreprojects\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfoInputs.cache
+D:\coreprojects\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfo.cs
+D:\coreprojects\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CoreCompileInputs.cache
+D:\coreprojects\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CopyComplete
+D:\coreprojects\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.dll
+D:\coreprojects\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.pdb
+D:\coreprojects\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.genruntimeconfig.cache
+D:\coreprojects\JaquarBooking\Infrastrucure\obj\Debug\net6.0\ref\Infrastrucure.dll
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.deps.json
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.runtimeconfig.json
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.dll
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.pdb
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.dll
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.dll
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.pdb
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.pdb
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.AssemblyReference.cache
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfoInputs.cache
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfo.cs
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CoreCompileInputs.cache
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CopyComplete
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.dll
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\refint\Infrastrucure.dll
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.pdb
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.genruntimeconfig.cache
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Infrastrucure\obj\Debug\net6.0\ref\Infrastrucure.dll
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.deps.json
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.runtimeconfig.json
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.dll
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Infrastrucure.pdb
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.dll
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.dll
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Application.pdb
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\bin\Debug\net6.0\Domain.pdb
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.AssemblyReference.cache
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.GeneratedMSBuildEditorConfig.editorconfig
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfoInputs.cache
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.AssemblyInfo.cs
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CoreCompileInputs.cache
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.csproj.CopyComplete
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.dll
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\refint\Infrastrucure.dll
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.pdb
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\Infrastrucure.genruntimeconfig.cache
+D:\coreproject\130323-1\130323-1\JaquarBooking\Infrastrucure\obj\Debug\net6.0\ref\Infrastrucure.dll
+D:\coreprojects\JaquarBooking\Infrastrucure\bin\Debug\net6.0\ref\Infrastrucure.dll

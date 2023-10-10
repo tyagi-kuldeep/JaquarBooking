@@ -1,0 +1,62 @@
+﻿@model WebApp.Areas.Admin.Models.Master.AddStateVm
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title text-bold text-lg">
+                    @ViewData["Title"]                    
+                </h1>
+                <div class="card-tools">
+                    <a asp-action="AddState" class=" btn btn-sm btn-primary">Save & Add More</a>
+                    <a asp-action="AddState" class=" btn btn-sm btn-primary">Save & Exit</a>
+                    @*<a asp-action="AddState" class=" btn btn-sm btn-secondary">Cancel</a>*@
+                     <a href="@Url.Action("ListState","Master", new { area = "admin" })" class="btn btn-sm btn-default">Cancel</a>
+                </div>
+            </div>
+            <div class="card-body">
+                  <div class="col-md-4">
+                      <div class="container">
+                  <h2>Add State</h2>
+                <form asp-controller="Master" asp-action="AddState" asp-area="admin">
+                    <span>@ViewBag.Msg</span>
+                    <div class="form-group">
+                      <label for="email">Name:</label>
+                      <input type="text" class="form-control form-control-sm" id="Name" name="Name" placeholder="Name" value=@Model.Name />
+                      @*@Html.TextBoxFor(m=>m.Name,new{@class="form-control",@placeholder="Name"})*@
+                      @Html.HiddenFor(m=>m.Id)
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Code:</label>
+                      <input type="text" class="form-control form-control-sm" id="Code" name="Code" placeholder="Code" value=@Model.Code />
+                      @*@Html.TextBoxFor(m=>m.Code,new{@class="form-control",@placeholder="Code"})*@
+                    </div>
+
+                     <div class="form-group">
+                      <label for="pwd">Country:</label>
+                       <select id="CountryId" name="CountryId" asp-for="CountryId" asp-items="Model.AvailableCountries" class="form-control form-control-sm" value=@Model.CountryId>
+                           <option value="0">-- Select --</option></select>
+                      @*@Html.TextBoxFor(m=>m.Code,new{@class="form-control",@placeholder="Code"})*@
+                    </div>
+
+                    <button type="submit" class="btn btn-default" onclick= "ClearSearch();" value= "Clear">Submit</button>
+                  </form>
+                </div>
+                  </div>
+                  <div class="col-md-8">&nbsp;</div>
+                </div>
+          </div>
+          </div>
+          </div>
+
+          @section Scripts
+        {
+        <script type="text/javascript">
+        { 
+            function ClearSearch() 
+            { 
+              $("#idname,#idcode").val("");
+            }            
+                
+        }
+        </script>
+        }

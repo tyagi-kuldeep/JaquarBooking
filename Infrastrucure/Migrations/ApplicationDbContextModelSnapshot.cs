@@ -47,17 +47,89 @@ namespace Infrastrucure.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "8af1b710-f348-4e51-b8a6-47c2f38e850b",
+                            ConcurrencyStamp = "e042dbfe-46e3-4652-ba9f-278287ed868e",
                             Name = "SuperAdmin",
                             NormalizedName = "SuperAdmin"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "b45bcfb1-d72b-44f2-8659-ee8e9ec7ecfc",
+                            ConcurrencyStamp = "94096f61-80bb-4a30-8c1f-cbe0fdb5aafa",
                             Name = "SubAdmin",
                             NormalizedName = "SubAdmin"
                         });
+                });
+
+            modelBuilder.Entity("Domain.Entities.JB_Booking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AccomodationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BranchId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Document")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Objective")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UpdatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("VisitDateFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("VisitDateTo")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("VisitorTypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JB_Booking", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.JB_MasterCountry", b =>
@@ -70,14 +142,20 @@ namespace Infrastrucure.Migrations
 
                     b.Property<string>("Code")
                         .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -95,6 +173,45 @@ namespace Infrastrucure.Migrations
                     b.ToTable("JB_MasterCountry", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.JB_MasterMenu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Controller")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ParentMenu")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("SubMenu")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("SubOrder")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JB_MasterMenu", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.JB_MasterState", b =>
                 {
                     b.Property<int>("Id")
@@ -108,11 +225,20 @@ namespace Infrastrucure.Migrations
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -128,6 +254,120 @@ namespace Infrastrucure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("JB_MasterState", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.JB_MasterVisitorType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("nvarchar(8)");
+
+                    b.Property<int?>("UpdatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JB_MasterVisitorType", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.JB_Participant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BookingId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Document")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FlightReturnDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FlightStartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("IsHospitalityProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("JaquarProductPromoting")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int?>("UpdatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("VisitorTypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JB_Participant", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Users", b =>
@@ -261,10 +501,10 @@ namespace Infrastrucure.Migrations
                             Address1 = "",
                             Address2 = "",
                             City = "",
-                            ConcurrencyStamp = "263d6dba-748e-4ba0-b650-9f48377530d3",
+                            ConcurrencyStamp = "7a57c069-b7e5-4bf3-9cc8-35e4dabc732b",
                             CreatedBy = 1,
-                            CreatedOnUtc = new DateTime(2022, 12, 29, 13, 4, 57, 287, DateTimeKind.Utc).AddTicks(7406),
-                            Dob = new DateTime(2022, 12, 29, 18, 34, 57, 287, DateTimeKind.Local).AddTicks(7376),
+                            CreatedOnUtc = new DateTime(2023, 10, 5, 16, 59, 13, 80, DateTimeKind.Utc).AddTicks(6176),
+                            Dob = new DateTime(2023, 10, 5, 22, 29, 13, 80, DateTimeKind.Local).AddTicks(6113),
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             FirstName = "",
@@ -276,13 +516,13 @@ namespace Infrastrucure.Migrations
                             MiddleName = "",
                             NormalizedEmail = "admin@admin.com",
                             NormalizedUserName = "admin@admin.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEN5KGpVwyb8Ko6hMpYFjruab31620NzMY37ikqrJhHDy5c+r/NOSu2kwpcl6vHOXQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAMSm+sxwYpavCEybj8LotjWuo0igrRmnxpmdh66FlpwGmiacmxXCL0lYS8biVj2aw==",
                             PhoneNumberConfirmed = false,
                             PhoneSecondary = "",
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
                             UpdatedBy = 1,
-                            UpdatedOnUtc = new DateTime(2022, 12, 29, 13, 4, 57, 287, DateTimeKind.Utc).AddTicks(7407),
+                            UpdatedOnUtc = new DateTime(2023, 10, 5, 16, 59, 13, 80, DateTimeKind.Utc).AddTicks(6178),
                             UserName = "admin@admin.com",
                             ZipCode = ""
                         });

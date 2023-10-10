@@ -1,0 +1,233 @@
+﻿@model IPagedList<WebApp.Areas.Admin.Models.User.ListUserVm>
+@{
+    ViewData["Title"] = "List User";
+    var Idval = (ViewContext.RouteData.Values["id"] != null ? ViewContext.RouteData.Values["id"].ToString() : "");
+    int SNo = 0;
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title text-bold text-lg">
+                    @ViewData["Title"]
+                    <code class="text-danger text-center">
+                        @{
+                            if (Idval == "success")
+                            {
+                               @:User details updated successfully.
+                            }
+                        }
+                    </code>
+                </h1>
+                <div class="card-tools">
+                    <a asp-action="AddUser" class=" btn btn-sm btn-primary">Add User</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <!--Filter-->
+                <form class="form-horizontal row sunClearSearch" asp-controller="Master" asp-action="ListState" method="get">
+                    <div class="col-md-3">
+                        <div class="sun-form-group">
+                            <label>Name</label>
+                            <input type="text" name="Name" id="txt_name" value="@ViewBag.Name" class="form-control form-control-sm" placeholder="Search by name" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="sun-form-group">
+                            <label>Email</label>
+                            <input type="text" name="Code" id="txt_code" value="@ViewBag.Email" class="form-control form-control-sm" placeholder="Search by Code" maxlength="100" />
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-1">
+                        <input type="submit" class="btn btn-sm btn-primary" value="Search" id="searchbtn"/>
+                        <input id="btnClear" type= "button" onclick= "ClearSearch();" value= "Clear">
+                       @* @if (ViewBag.Export)
+                        {
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" autocomplete="off">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" role="menu" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(108px, 31px, 0px);">
+                                    <input id="btnDownloadExcel" type="submit" name="Excel" class="dropdown-item" value="Excel" style="display:none;">
+                                    <a class="dropdown-item" tabindex="-1" href="javascript:$('#btnDownloadExcel').click();">Excel</a>
+                                </div>
+                            </div>
+                        }*@
+                    </div>
+
+                </form>
+                <!--End Filter-->
+                <div class="row">
+                    <div class="col-md-12">
+                        @if (Model.Count > 0)
+                        {
+                            <table class="table table-sm table-bordered table-striped table-responsive-lg">
+                                <thead>
+                                    <tr>
+                                        <th>S.No.</th>
+                                        <th>
+                                            @Html.ActionLink("Name", "ListUser", new { sortby = ViewBag.SortNameParam, Name = @ViewBag.SrName, Code = @ViewBag.SrCode })
+                                            <i class="fas @(@ViewBag.SortNameParam=="Name desc"?"fa-sort-down":"fa-sort-up")"></i>
+                                        </th>
+                                        <th>
+                                            @Html.ActionLink("Email", "ListUser", new { sortby = ViewBag.SortEmailParam, Name = @ViewBag.SrName, Code = @ViewBag.SrCode })
+                                            <i class="fas @(@ViewBag.SortCodeParam=="Code desc"?"fa-sort-down":"fa-sort-up")"></i>
+                                       </th>
+                                       <th>
+                                            @Html.ActionLink("Country", "ListUser", new { sortby = ViewBag.SortCountryParam,  Name = @ViewBag.SrName, Code = @ViewBag.SrCode })
+                                            <i class="fas @(@ViewBag.SortCreatedOnParam=="CreatedOn desc"?"fa-sort-down":"fa-sort-up")"></i>
+                                        </th>
+                                         <th>
+                                            @Html.ActionLink("State", "ListUser", new { sortby = ViewBag.SortStateParam,  Name = @ViewBag.SrName, Code = @ViewBag.SrCode })
+                                            <i class="fas @(@ViewBag.SortCreatedOnParam=="CreatedOn desc"?"fa-sort-down":"fa-sort-up")"></i>
+                                        </th>
+                                         <th>
+                                            @Html.ActionLink("City", "ListUser", new { sortby = ViewBag.SortCityParam,  Name = @ViewBag.SrName, Code = @ViewBag.SrCode })
+                                            <i class="fas @(@ViewBag.SortCreatedOnParam=="CreatedOn desc"?"fa-sort-down":"fa-sort-up")"></i>
+                                        </th>
+                                        <th>Status</th>                                        
+                                         <th>
+                                            @Html.ActionLink("Created On", "ListUser", new { sortby = ViewBag.SortCreatedOnParam,  Name = @ViewBag.SrName, Code = @ViewBag.SrCode })
+                                            <i class="fas @(@ViewBag.SortCreatedOnParam=="CreatedOn desc"?"fa-sort-down":"fa-sort-up")"></i>
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr id="tr_@item.Id">
+                                            <td>
+                                                @((@SNo++) + ((Model.PageNumber - 1) * Model.PageSize) + 1)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.FirstName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Email)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Country)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.State)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.City)
+                                            </td>
+                                            <td>                                               
+                                                    @*<a title="Change Status" href="@Url.Action("ChangeStatusState", "Master", new { id = @item.Id })" onclick="return ChangeStatus();"><i id="faActiveInActive" class="fa @(@item.IsActive==true?"fa-check-circle":"fa-times-circle text-red")"></i></a>      *@
+                                                    <a title="Change Status" href="javascript:void(0);" onclick="ChangeAjaxStatus(@item.Id);"><i id="faActiveInActive" class="fa @(@item.IsActive==true?"fa-check-circle":"fa-times-circle text-red")"></i></a>                                                
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CreatedDate)
+                                            </td>                                            
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm bg-gradient-primary dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fas fa-cog"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+
+                                                        <a class="dropdown-item" title="Edit" href="@Url.Action("AddUser", "User", new { eid = @item.EncryptedId })"><i class="fas fa-edit"></i> Edit</a>
+                                                            <a class="dropdown-item" title="Delete" href="javascript:void(0);" onclick="AjaxDelete(@item.Id);"><i class="fas fa-trash"></i>Delete</a>
+                                                            @*<a title="Delete" href="javascript:void(0);" onclick="AjaxDelete(@item.Id);"><i class="fas fa-trash"></i></a>*@
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                       @* else
+                        {
+                            @:@{
+                                await Html.RenderPartialAsync("_NoRecordFoundPartial");
+                            }
+                        }*@
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                @if (Model.Count > 0)
+                    @Html.PagedListPager(Model, page => Url.Action("ListState", new { page = page, sortby = ViewBag.SortDefaultValue,Name = @ViewBag.SrName, Code = @ViewBag.SrCode }),
+                new X.PagedList.Mvc.Common.PagedListRenderOptionsBase
+                {
+                UlElementClasses = new string[] { "pagination pagination-sm float-right" },
+                LiElementClasses = new string[] { "page-item" },
+                PageClasses = new string[] { "page-link" },
+                MaximumPageNumbersToDisplay = 5
+                })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts
+    {
+        <script type="text/javascript">
+            function DeleteState()
+            {
+                if(confirm('Do you want to delete?'))return true;else return false;
+            }
+            function ClearSearch() 
+            { 
+              $("#txt_name,#txt_code").val("");
+            }  
+            function ChangeStatus() 
+            { 
+                if (confirm('Do you want to change the status?')) { 
+                    return true; 
+                } 
+                else return false;
+            }   
+            function ChangeAjaxStatus(_id)
+            {
+                if (_id>0 && confirm('Do you want to change the status?')) { 
+                     $.ajax({
+                    type: "POST", 
+                    url: "@Url.Action("ChangeAjaxUserState","User")", 
+                    data: { id: _id },
+                    success: function (response) {
+                        if (response) {
+                            //var trid = "tr_" + _Id;
+                            //if ($('#' + trid + ' #faActiveInActive').attr('class') === 'fa fa-check-circle')
+                            //    $('#' + trid + ' #faActiveInActive').attr('class', 'fa fa-times-circle text-red');
+                            //else
+                            //    $('#' + trid + ' #faActiveInActive').attr('class', 'fa fa-check-circle');                           
+                            
+                            if ($('#tr_'+_id+' #faActiveInActive').attr('class') === 'fa fa-check-circle')
+                             $('#tr_'+_id+' #faActiveInActive').attr('class', 'fa fa-times-circle text-red');
+                            else                                
+                            $('#tr_'+_id+' #faActiveInActive').attr('class', 'fa fa-check-circle');
+                        }
+                        else
+                             alert('error.');
+        }
+    });
+                } 
+            }
+
+        function AjaxDelete(_id) 
+        {
+            if (_id > 0 && confirm('Do you want to delete this record?')) {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("AjaxDeleteUser","User")",
+                    data: { id: _id },
+                    success: function (response) {
+                        if (response) {
+                            alert('Record deleted successfully');
+                            window.location.reload();
+                        }
+                        else
+                            alert('error.');
+                    }
+                });
+            }
+                
+        }
+        </script>
+    }
+

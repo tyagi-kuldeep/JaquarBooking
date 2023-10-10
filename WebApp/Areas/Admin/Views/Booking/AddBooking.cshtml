@@ -1,0 +1,480 @@
+﻿@model WebApp.Areas.Admin.Models.Booking.AddBookingVm
+@section Styles
+    {
+    <link href="~/Js/daterangepicker/daterangepicker.css" rel="stylesheet" />
+   
+    <link href="/Css/select2.min.css" rel="stylesheet" />
+}
+    @{
+    ViewData["Title"] = "Add Booking";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto mr-auto">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a class="nav-link btn active" href="#booking" data-toggle="tab">Booking</a></li>
+                            @if (Model.Id > 0)
+                            {
+                                <li class="nav-item"><a class="nav-link btn" href="#bookingdetail" data-toggle="tab">Add Participants</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-auto">
+                        <a href="@Url.Action("ListBooking","Booking")" class="btn btn-danger">Cancel</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="active tab-pane" id="booking">
+                        <form id="frmsubmit" class="form-horizontal" asp-controller="Booking" asp-action="AddBooking" enctype="multipart/form-data">
+                            <span>@ViewBag.Msg</span>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h1 class="card-title text-bold text-lg">
+                                        @ViewData["Title"]
+                                    </h1>
+                                    <div class="card-tools">
+                                        <button type="submit" class="btn btn-sm btn-primary" name="submit" onclick="return Validate('saven');">Save</button>
+                                        <input type="submit" class="btnSubmitOrder btn btn-sm btn-primary" name="save" value="Save & Exit" onclick="return Validate('savenexit');" />
+                                        <a href="@Url.Action("ListUser","User")" class="btn btn-sm btn-default">Cancel</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @Html.AntiForgeryToken()
+                                            <div class="card card-default">
+                                                <div class="card-header">
+                                                    <h1 class="card-title text-bold text-lg">
+                                                        @ViewData["Title"]
+                                                        @Html.HiddenFor(m => m.Id)
+                                                        @*@Html.HiddenFor(m => m.CallerBtnName)*@
+                                                    </h1>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 text-danger">
+                                                            @Html.ValidationSummary()
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.VisitorTypeId, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    <select asp-for="VisitorTypeId" class="form-control form-control-sm">
+                                                                        @*   <option value="0">-- Select --</option>*@
+                                                                        <option value="1" selected="selected">Dealer</option>
+                                                                        <option value="2">Architect</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.Objective, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    @Html.TextBoxFor(m => m.Objective, new { @class = "form-control form-control-sm" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            &nbsp;
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.Location, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    @Html.TextBoxFor(m => m.Location, new { @class = "form-control form-control-sm" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.Phone, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control form-control-sm" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.AccomodationId, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    <select asp-for="AccomodationId" class="form-control form-control-sm">
+                                                                        @*   <option value="0">-- Select --</option>*@
+                                                                        <option value="1" selected="selected">Hotel</option>
+                                                                        <option value="2">Guest House</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.BranchId, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    <select asp-for="BranchId" class="form-control form-control-sm">
+                                                                        @*   <option value="0">-- Select --</option>*@
+                                                                        <option value="1" selected="selected">Delhi</option>
+                                                                        <option value="2">Bangalore</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.City, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    @Html.TextBoxFor(m => m.City, new { @class = "form-control form-control-sm" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.BookingStatusId, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    <select asp-for="BookingStatusId" class="form-control form-control-sm">
+                                                                        @*   <option value="0">-- Select --</option>*@
+                                                                        <option value="1" selected="selected">Provisional</option>
+                                                                        <option value="2">Confirm</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.VisitDateFrom, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    <div class="input-group">
+                                                                        @Html.TextBoxFor(m => @m.VisitDateFrom, new { @class = "form-control form-control-sm jqDate"})
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text cldatepicker"><a class="cldatepicker" href="javacsript:void(0);"><i class="far fa-calendar-alt"></i></a></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.VisitDateTo, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    <div class="input-group">
+                                                                        @Html.TextBoxFor(m => @m.VisitDateTo, new { @class = "form-control form-control-sm jqDate"})
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text cldatepicker"><a class="cldatepicker" href="javacsript:void(0);"><i class="far fa-calendar-alt"></i></a></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+                                                                @Html.LabelFor(m => m.Description, new { @class = "col-sm-4 col-form-label" })
+                                                                <div class="col-sm-8">
+                                                                    @Html.TextBoxFor(m => m.Description, new { @class = "form-control form-control-sm" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer clearfix">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </form>
+                        <div id="records">
+                                    <table id="table table-sm table-bordered table-striped table-responsive-lg">
+                                           <thead class="table-primary">
+                                            <tr>
+                                                <th>Sr. No.</th>
+                                                <th>#</th>
+                                                <th>Visitor Type</th>
+                                                <th>Is Hospitality</th>
+                                                <th>Name</th>
+                                                <th>ContactNo.</th>
+                                                <th>Email</th>
+                                                <th>Company</th>
+                                                <th>Jaquar Product Promoting</th>
+                                                <th>Doc.</th>
+                                                 <th>Flight Start Date</th>
+                                                 <th>Flight Return Date</th>
+                                                <th>Created On</th>
+                                            </tr>
+                                         <tbody id="tblactivitydetail">
+                                         </tbody>
+                                    </table>
+                                </div>
+                    </div>
+                    @if (Model.Id > 0)
+                    {
+                        <div id="bookingdetail" class="tab-pane">
+                            <div class="row">
+                                <div class="col-md-6">
+                                   <div class="form-group row">
+                                       <label>Visitor Type</label>
+                                      <div class="col-sm-8">
+                                      <select class="form-control form-control-sm" id="visitortypeid">
+                                       @*   <option value="0">-- Select --</option>*@
+                                             <option value="1" selected="selected">Dealer</option>
+                                             <option value="2">Architect</option>
+                                       </select>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <div class="form-group row">
+                                      <label>Is Hospitality Project</label>
+                                      <div class="col-sm-8">
+                                      <select id="ishospitalityprojectid" class="form-control form-control-sm">
+                                       @*   <option value="0">-- Select --</option>*@
+                                             <option value="1" selected="selected">Yes</option>
+                                             <option value="2">No</option>
+                                       </select>
+                                      </div>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="sun-form-group">
+                                        <label>Name</label>
+                                        <input type="text" name="Name" id="txt_name" value="" class="form-control form-control-sm" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="sun-form-group">
+                                        <label>Phone</label>
+                                        <input type="text" name="Phone" id="txt_phone" value="" class="form-control form-control-sm" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="sun-form-group">
+                                        <label>Email</label>
+                                        <input type="email" name="Email" id="txt_email" value="" class="form-control form-control-sm" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="sun-form-group">
+                                        <label>Company</label>
+                                        <input type="text" name="Comapany" id="txt_company" value="" class="form-control form-control-sm" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="sun-form-group">
+                                        <label>Jaquar Promotoion Products</label>
+                                        <select class="form-control form-control-sm" id="jaqpromoproducts"  multiple style="width:100%">
+                                       @*   <option value="0">-- Select --</option>*@
+                                             <option value="1" selected="selected">Jaquar</option>
+                                             <option value="2">Artize</option>
+                                             <option value="3">Essco</option>
+                                       </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="sun-form-group">
+                                        <label>Documents</label>
+                                        <input type="text" name="Documents" id="txt_document" value="" class="form-control form-control-sm" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="sun-form-group">
+                                        <label>Flight Start Date</label>
+                                        <input type="text" name="FlightStardDt" id="txt_flightstarddt" value="" class="form-control form-control-sm" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="sun-form-group">
+                                        <label>Flight Return Date</label>
+                                        <input type="text" name="FlightReturndDt" id="txt_flightreturnddt" value="" class="form-control form-control-sm" />
+                                    </div>
+                                     <input id="hdnBookingDetailId" name="hdnBookingDetailId" type="hidden" value="" />
+                                    @*<button type="submit" class="btn btn-sm btn-primary" name="submit" onclick="return Validate('saven');">Save</button>*@
+                                    <button id="btnSaveBookingDetail" type="submit" class="btn btn-sm btn-primary" onclick="AddBookingDetail();">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script src="~/Js/jquery-ui.js"></script>
+    <script src="~/Js/daterangepicker/moment.min.js"></script>
+    <script src="~/Js/daterangepicker/daterangepicker.js"></script>
+     <script src="/js/select2.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+           if (@Model.Id>0){
+                participantdetails();
+           }            
+        });
+        $(function() {
+            $('#VisitDateFrom,#VisitDateTo').daterangepicker({
+                autoApply: true,
+                showDropdowns: true,
+                singleDatePicker: true,
+                opens: 'left',
+                locale: { format: 'DD/MM/YYYY' },
+            }, function(start, end, label) {
+                //console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+
+            // Notification("warning", "warning Title", "warning Message section");
+            //Notification("success", "success Title", "success Message section");
+            //Notification("error", "error Title", "error Message section");
+            //Notification("info", "info Title", "info Message section");
+            $(".custom-file-input").on("change", function() {
+                var filename = $(this).val().split('\\').pop();
+                $(this).next('.custom-file-label').html(filename);
+            });
+        });
+
+        function participantdetails(selId) {
+            var bookingid = @Model.Id;
+            //var bookingid = 2;
+            if (bookingid > 0) {
+                $.getJSON('/Ajax/LoadParticipants', { Type: "GetStateByCountryID", RefId: bookingid }, function(data) {
+                    var item = "";
+                    $.each(data, function(i, res) {
+                        console.log(res);
+                        item += '<tr><td>' + data[i].id + '</td><td><a title="Edit" href="javascript:void(0);" onclick="EditBookingDetail(' + res.id + ');"><i class="fas fa-edit"></i></a></td><td>'+res.visitorTypeId+'</td><td>' + res.isHospitalityProjectId + '</td><td>' + res.name + '</td><td>' + res.phone + '</td><td>' + res.email + '</td><td>' + res.company + '</td><td>' + res.name + '</td><td>' + res.document + '</td><td>' + res.flightStartDate + '</td><td>' + res.flightReturnDate + '</td><td>' + res.company + '</td></tr>';
+                    });
+                    $("#tblactivitydetail").html(item);
+                    if (selId > 0) { $("#tblactivitydetail").val(selId); };
+                });
+            }
+        }
+        $('#jaqpromoproducts').select2({ theme: "classic", closeOnSelect: true, allowClear: true, maximumSelectionLength: 0 });
+
+         function AddBookingDetail() {
+            var visitortype =parseInt($("#visitortypeid").val())||0, 
+            name = $.trim($("#txt_name").val()) || '',
+            phone = $.trim($("#txt_phone").val()) || '', email = $.trim($("#txt_email").val()) || '', company = $.trim($("#txt_company").val()) || '',
+            jaqprodprom=$("#jaqpromoproducts").val(),            
+            document = $("#txt_document").val();
+            if(visitortype<=0){
+                Notification("error", title = "", msg = "Visitor Type is required.");
+                $("#visitortypeid").focus();
+            }            
+            else if(name==""){
+                Notification("error", title = "", msg = "Name is required.");
+                $("#txt_name").focus();
+            }            
+            else if (phone == ""){
+                Notification("error", title = "", msg = "Phone is required.");
+                $("#txt_phone").focus();
+            }
+            else if (email == ""){
+                Notification("error", title = "", msg = "Email is required.");
+                $("#txt_email").focus();
+            }
+            else if (company == ""){
+                Notification("error", title = "", msg = "Company is required.");
+                $("#txt_company").focus();
+            }
+            else if (jaqprodprom == ""){
+                Notification("error", title = "", msg = "Jaquar product promoting is required.");
+                $("#jaqpromoproducts").focus();
+            }
+            else {
+                $(".btnSaveBookingDetail").attr('disabled');
+                var _formData = new FormData();
+                _formData.append("Id",parseInt($("#hdnBookingDetailId").val())||0);
+                _formData.append("BookingId", @Model.Id);
+                _formData.append("VisitorTypeId", visitortype);
+                _formData.append("Name", name);
+                _formData.append("Email", email);
+                _formData.append("Phone", phone);
+                _formData.append("Company", company);
+                _formData.append("JaquarProductPromoting", jaqprodprom);
+                _formData.append("IsHospitalityProject", $("#ddHospitalityProject").val());
+                _formData.append("Document", document);
+                _formData.append("FlightStartDate", $("#txt_flightstarddt").val());
+                _formData.append("FlightReturnDate", $("#txt_flightreturnddt").val());
+                //var myfile = document.getElementById(imageid);
+                //if ($("#" + imageid)[0].files.length > 0) {
+                //    for (var i = 0; i < $("#" + imageid)[0].files.length; i++)
+                //        _formData.append("DocumentFile", $("#" + imageid)[0].files[i]);
+                //}
+                $.ajax({
+                    type: "POST",
+                    url: "/admin/Participant/AddParticipant",
+                    data: _formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        if (data.success) {
+                            Notification('success', '', data.message);
+                            ClearBookingdetail();
+                            ListAllBookingDetails();
+                        }
+                        else {
+                            Notification('error', '', data.message);
+                        }
+                        $(".btnSaveBookingDetail").removeAttr('disabled');
+                    }
+                });
+            }
+        }
+
+        function EditBookingDetail(Id) {
+            $('.nav-pills a[href="#bookingdetail"]').tab('show');
+            $.ajax({
+                type: "GET",
+                url: "/Ajax/GetParticipantById",
+                data: "RefId=" + Id,
+                success: function(data) {
+                    var jaqprodprom =data.jaquarProductPromoting!=null? data.jaquarProductPromoting.split(','):"";
+                    console.log("Data=" + data);
+                    if (data != null) {
+                        $("#hdnBookingDetailId").val(data.id)
+                        $("#visitortypeid").val(data.visitorTypeId);
+                        $("#txt_name").val(data.name);
+                        $("#txt_phone").val(data.phone);
+                        $("#txt_email").val(data.email);
+                        $('#jaqpromoproducts').val(jaqprodprom).trigger('change');
+                        //$("#jaqpromoproducts").val(data.jaqpPomoProducts);
+                        $("#ishospitalityprojectid").val(data.isHospitalityProjectId);
+                        $("#txt_company").val(data.company);
+                        $("#txt_document").val(data.document);
+                        $("#txt_flightstarddt").val(data.flightStartDate);
+                        $("#txt_flightreturnddt").val(data.flightReturnDate);
+
+                    }
+                }
+            });
+        }
+    </script>
+}

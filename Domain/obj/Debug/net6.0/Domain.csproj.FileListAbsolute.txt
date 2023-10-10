@@ -1,0 +1,107 @@
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\bin\Debug\net6.0\Domain.dll
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\bin\Debug\net6.0\ref\Domain.dll
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\bin\Debug\net6.0\Domain.pdb
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.dll
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\ref\Domain.dll
+D:\2768n\dealers\coreprogect\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.pdb
+D:\coreprojects\New folder\JaquarBooking\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\coreprojects\New folder\JaquarBooking\Domain\bin\Debug\net6.0\Domain.dll
+D:\coreprojects\New folder\JaquarBooking\Domain\bin\Debug\net6.0\ref\Domain.dll
+D:\coreprojects\New folder\JaquarBooking\Domain\bin\Debug\net6.0\Domain.pdb
+D:\coreprojects\New folder\JaquarBooking\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\coreprojects\New folder\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\coreprojects\New folder\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\coreprojects\New folder\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\coreprojects\New folder\JaquarBooking\Domain\obj\Debug\net6.0\Domain.dll
+D:\coreprojects\New folder\JaquarBooking\Domain\obj\Debug\net6.0\ref\Domain.dll
+D:\coreprojects\New folder\JaquarBooking\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\bin\Debug\net6.0\Domain.deps.json
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\bin\Debug\net6.0\Domain.dll
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\bin\Debug\net6.0\Domain.pdb
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.dll
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\refint\Domain.dll
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Users\kuldeep.t\Downloads\JaquarBooking\JaquarBooking\Domain\obj\Debug\net6.0\ref\Domain.dll
+D:\coreproject\JaquarBooking\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\coreproject\JaquarBooking\Domain\bin\Debug\net6.0\Domain.dll
+D:\coreproject\JaquarBooking\Domain\bin\Debug\net6.0\Domain.pdb
+D:\coreproject\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\coreproject\JaquarBooking\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\coreproject\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\coreproject\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\coreproject\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\coreproject\JaquarBooking\Domain\obj\Debug\net6.0\Domain.dll
+D:\coreproject\JaquarBooking\Domain\obj\Debug\net6.0\refint\Domain.dll
+D:\coreproject\JaquarBooking\Domain\obj\Debug\net6.0\Domain.pdb
+D:\coreproject\JaquarBooking\Domain\obj\Debug\net6.0\ref\Domain.dll
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\bin\Debug\net6.0\Domain.deps.json
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\bin\Debug\net6.0\Domain.dll
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\bin\Debug\net6.0\Domain.pdb
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\obj\Debug\net6.0\Domain.dll
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\obj\Debug\net6.0\refint\Domain.dll
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Users\kuldeep.t\Downloads\22.01\22.01\JaquarBooking\Domain\obj\Debug\net6.0\ref\Domain.dll
+D:\coreprojects\2102\2102\JaquarBooking\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\coreprojects\2102\2102\JaquarBooking\Domain\bin\Debug\net6.0\Domain.dll
+D:\coreprojects\2102\2102\JaquarBooking\Domain\bin\Debug\net6.0\ref\Domain.dll
+D:\coreprojects\2102\2102\JaquarBooking\Domain\bin\Debug\net6.0\Domain.pdb
+D:\coreprojects\2102\2102\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\coreprojects\2102\2102\JaquarBooking\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\coreprojects\2102\2102\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\coreprojects\2102\2102\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\coreprojects\2102\2102\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\coreprojects\2102\2102\JaquarBooking\Domain\obj\Debug\net6.0\Domain.dll
+D:\coreprojects\2102\2102\JaquarBooking\Domain\obj\Debug\net6.0\ref\Domain.dll
+D:\coreprojects\2102\2102\JaquarBooking\Domain\obj\Debug\net6.0\Domain.pdb
+D:\coreprojects\JaquarBooking\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\coreprojects\JaquarBooking\Domain\bin\Debug\net6.0\Domain.dll
+D:\coreprojects\JaquarBooking\Domain\bin\Debug\net6.0\Domain.pdb
+D:\coreprojects\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\coreprojects\JaquarBooking\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\coreprojects\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\coreprojects\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\coreprojects\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\coreprojects\JaquarBooking\Domain\obj\Debug\net6.0\Domain.dll
+D:\coreprojects\JaquarBooking\Domain\obj\Debug\net6.0\Domain.pdb
+D:\coreprojects\JaquarBooking\Domain\obj\Debug\net6.0\ref\Domain.dll
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\bin\Debug\net6.0\Domain.deps.json
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\bin\Debug\net6.0\Domain.dll
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\bin\Debug\net6.0\Domain.pdb
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\obj\Debug\net6.0\Domain.dll
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\obj\Debug\net6.0\refint\Domain.dll
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Users\kuldeep.t\Desktop\12.03.23\12.03.23\JaquarBooking\Domain\obj\Debug\net6.0\ref\Domain.dll
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\bin\Debug\net6.0\Domain.dll
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\bin\Debug\net6.0\Domain.pdb
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\obj\Debug\net6.0\Domain.dll
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\obj\Debug\net6.0\refint\Domain.dll
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\obj\Debug\net6.0\Domain.pdb
+D:\coreproject\130323-1\130323-1\JaquarBooking\Domain\obj\Debug\net6.0\ref\Domain.dll
+D:\coreprojects\JaquarBooking\Domain\bin\Debug\net6.0\ref\Domain.dll

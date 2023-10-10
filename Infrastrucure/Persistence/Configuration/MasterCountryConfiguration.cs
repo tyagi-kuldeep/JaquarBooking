@@ -10,8 +10,7 @@ namespace Infrastructure.Persistence.Configuration
         {
             builder.ToTable(nameof(JB_MasterCountry));
             builder.Property(nameof(JB_MasterCountry.Name)).HasMaxLength(100).IsRequired();
-            builder.Property(nameof(JB_MasterCountry.Code)).HasMaxLength(3).IsRequired();
-
+            builder.Property(nameof(JB_MasterCountry.Code)).HasMaxLength(100).IsRequired();
         }
     }
 }

@@ -1,0 +1,62 @@
+﻿@using System.Security.Claims;
+<nav class="main-header navbar navbar-expand navbar-dark text-sm" style="background-color:#000 !important;">    
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a id="pushmenulink" class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="d-none d-sm-block">
+            <a id="date-part" class="nav-link" href="#">
+            </a>
+        </li>
+        <li class="d-none d-sm-block">
+            <a id="time-part" class="nav-link" href="#">
+            </a>
+        </li>
+        <li class="">
+            <a class="nav-link" href="#">
+                Welcome, @User.FindFirstValue(ClaimTypes.Name)
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="fa fa-cogs"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a asp-controller="Profile" asp-action="AddProfile" class="dropdown-item">
+                    <div class="media">
+                        <div class="media-body">
+                            <h3 class="dropdown-item-title">
+                                Profile
+                                <span class="float-right text-sm"><i class="fas fa-user-md"></i></span>
+                            </h3>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="dropdown-divider"></div>
+                <a asp-controller="Account" asp-action="Login" asp-area="admin" class="dropdown-item">
+                    <div class="media">
+                        <div class="media-body">
+                            <h3 class="dropdown-item-title">
+                                Front Login
+                                <span class="float-right text-sm text-danger"><i class="fa fa-sign-out-alt"></i></span>
+                            </h3>
+                        </div>
+                    </div>
+                </a>
+                <a asp-controller="Account" asp-action="LogOut" asp-area="admin"  class="dropdown-item">
+                    <div class="media">
+                        <div class="media-body">
+                            <h3 class="dropdown-item-title">
+                                Sign Out
+                                <span class="float-right text-sm text-danger"><i class="fa fa-sign-out-alt"></i></span>
+                            </h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>

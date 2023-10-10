@@ -17,6 +17,7 @@ namespace Infrastrucure.Persistence
         #endregion
         #region DbSet
         public DbSet<JB_MasterCountry> JB_MasterCountry {get; set;}
+        //public DbSet<JB_MasterState> JB_MasterState { get; set; }
         #endregion
         #region Methods
         public Task<int> SaveChangesAsync()

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Css/all.min.css">
+    <link rel="stylesheet" href="~/Css/icheck-bootstrap.min.css">
+    <link href="~/Css/adminlte.min.css" rel="stylesheet" />
+    <link href="~/Css/admin.css" rel="stylesheet" />
+    <link href="~/Css/Plugin/all.min.css" rel="stylesheet" />
+    <link href="~/Css/Plugin/OverlayScrollbars.css" rel="stylesheet" />
+    <link href="~/Css/Plugin/OverlayScrollbars.min.css" rel="stylesheet" />
+    <link href="~/Css/Plugin/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/Css/Plugin/toastr/toastr.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/SiteFiles/_main-sidebar.scss">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  @*  <link href="~/js/plugins/toastr/toastr.css" rel="stylesheet" />*@
+    @RenderSection("Styles", false)
+   <script src="~/Js/jquery.min.js"></script>
+</head>
+<body id="bodyadmin" class="hold-transition sidebar-mini layout-fixed text-sm">
+    <div class="wrapper">
+        @{await Html.RenderPartialAsync("_Header");}
+        @{await Html.RenderPartialAsync("_MainMenu");}
+        <div class="content-wrapper">
+            <section class="content p-0">
+                <div class="container-fluid p-1">
+                    @RenderBody()
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="sunloader fa-3x"><i class="fas fa-circle-notch fa-spin"></i></div>
+   @* @{await Html.RenderPartialAsync("_CreatedUpdatedDetailsModalPartial");} *@   
+</body>
+</html>
+<partial name="/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml" />
+   <script src="~/SiteJs/admin.js"></script>
+@RenderSection("Scripts", false)
+<script type="text/javascript">
+    $(function () {
+        var cl = getCookie('isSidebarOpen') || '';
+        if (cl != '')
+            $("#bodyadmin").addClass(cl);
+        $("#pushmenulink").click(function () {
+            if ($("#bodyadmin").hasClass("sidebar-collapse")) 
+                setCookie("isSidebarOpen", "", 365);            
+            else
+                setCookie("isSidebarOpen", "sidebar-collapse", 365);  
+        });
+    });     
+</script>

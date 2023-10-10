@@ -1,0 +1,21 @@
+﻿/*CUSTOM CSS*/
+.sunloader {
+    background: rgba(0,0,0,.5);
+    align-items: center;
+    display: none;
+    justify-content: center;
+    z-index: 50;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+body.loading .sunloader {
+    overflow: hidden;
+}
+
+body.loading .sunloader {
+    display: flex;
+}
